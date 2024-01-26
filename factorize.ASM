@@ -11,12 +11,12 @@ Print:					; print A
 	JAE Print2digit		;if A>=10
 Print1digit:			; print 1 digit	
 	ADD A,48         	; convert to char 
-    MOV [C], A
-    SUB A,48         	; convert to u-int again
-    INC C 
-    MOV [C],44        	; add "," to output
-    INC C
-    RET
+    	MOV [C], A
+    	SUB A,48         	; convert to u-int again
+    	INC C 
+    	MOV [C],44        	; add "," to output
+    	INC C
+    	RET
 Print3digit:
 	PUSH D
 	PUSH A
@@ -47,7 +47,7 @@ Print2digit:
 	JMP Print1digit
 Loop:
 	
-    MOV A,B	
+    	MOV A,B	
    	MUL B         		;A=i*i		
 	CMP A,D					
 	JA If				;if i*i > n 
